@@ -44,6 +44,7 @@
                     </div>
                 </div>
                 <a href="{{ route('services') }}" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Služby</a>
+                <a href="{{ route('references') }}" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Reference</a>
                 <a href="{{ route('blog') }}" class="text-slate-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium transition-colors">Blog</a>
                 <a href="{{ route('contact') }}" class="ml-4 bg-gradient-to-r from-sky-500 to-indigo-500 text-white px-4 py-2 rounded-lg text-sm font-semibold hover:from-sky-600 hover:to-indigo-600 transition-all duration-200 shadow-lg">Kontakt</a>
             </div>
@@ -62,6 +63,7 @@
             <a href="{{ route('products.maponculture') }}" class="block text-slate-400 hover:text-white px-6 py-2 text-sm">↳ MaponCulture</a>
             <a href="{{ route('products.custom') }}" class="block text-slate-400 hover:text-white px-6 py-2 text-sm">↳ Vývoj na míru</a>
             <a href="{{ route('services') }}" class="block text-slate-300 hover:text-white px-3 py-2 text-sm">Služby</a>
+            <a href="{{ route('references') }}" class="block text-slate-300 hover:text-white px-3 py-2 text-sm">Reference</a>
             <a href="{{ route('blog') }}" class="block text-slate-300 hover:text-white px-3 py-2 text-sm">Blog</a>
             <a href="{{ route('contact') }}" class="block text-slate-300 hover:text-white px-3 py-2 text-sm">Kontakt</a>
         </div>
@@ -96,9 +98,10 @@
             <ul class="space-y-2 text-sm">
                 <li><a href="{{ route('about') }}" class="hover:text-white transition-colors">O nás</a></li>
                 <li><a href="{{ route('services') }}" class="hover:text-white transition-colors">Služby</a></li>
+                <li><a href="{{ route('references') }}" class="hover:text-white transition-colors">Reference</a></li>
                 <li><a href="{{ route('blog') }}" class="hover:text-white transition-colors">Blog</a></li>
                 <li><a href="{{ route('contact') }}" class="hover:text-white transition-colors">Kontakt</a></li>
-                <li><a href="{{ route('admin.login') }}" class="hover:text-white transition-colors">Admin</a></li>
+                <li><a href="{{ route('filament.admin.auth.login') }}" class="hover:text-white transition-colors">Admin</a></li>
             </ul>
         </div>
         <div>

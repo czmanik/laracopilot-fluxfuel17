@@ -33,24 +33,110 @@
                 <p class="text-slate-500 text-sm">Prodávejte digitální fotografie i fyzické printy. Integrace s platební bránou, automatické doručení digitálních souborů.</p>
             </div>
         </div>
-        <div class="bg-slate-900 text-white rounded-3xl p-12">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                <div>
-                    <h2 class="text-3xl font-bold mb-6">Vše, co fotograf potřebuje</h2>
-                    <ul class="space-y-4">
-                        @foreach(['Responzivní portfolio s galeriemi', 'Online rezervace termínů s SMS potvrzením', 'E-shop s digitálními i fyzickými produkty', 'Správa klientů a jejich objednávek', 'SEO optimalizace pro vyhledávače', 'Integrace s Instagram a Google Business', 'Vlastní doména a SSL certifikát', 'Technická podpora v češtině'] as $feature)
-                        <li class="flex items-center gap-3 text-slate-300"><span class="w-5 h-5 bg-pink-500 rounded-full flex items-center justify-center text-xs flex-shrink-0">✓</span> {{ $feature }}</li>
-                        @endforeach
-                    </ul>
-                </div>
-                <div class="space-y-4">
-                    <div class="bg-slate-800 rounded-2xl p-6">
-                        <p class="text-slate-400 text-sm mb-1">Měsíční předplatné od</p>
-                        <p class="text-4xl font-black text-pink-400">990 Kč</p>
-                        <p class="text-slate-400 text-sm">bez DPH / měsíc</p>
+        <!-- Pricing & Comparison -->
+        <div class="mb-20">
+            <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">Vyberte si svůj plán</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Lite -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-8 flex flex-col shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Lite</h3>
+                    <p class="text-slate-500 text-sm mb-6">Pro začínající fotografy</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-slate-900">490 Kč</span>
+                        <span class="text-slate-500 text-sm">/ měsíc</span>
                     </div>
-                    <a href="{{ route('contact') }}" class="block text-center bg-gradient-to-r from-pink-500 to-rose-500 hover:from-pink-600 hover:to-rose-600 text-white py-4 rounded-xl font-semibold transition-all">Získat demo zdarma</a>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm text-slate-600">
+                        <li class="flex items-center gap-2">✅ Portfolio web</li>
+                        <li class="flex items-center gap-2">✅ 5 galerií</li>
+                        <li class="flex items-center gap-2">✅ Základní SEO</li>
+                        <li class="flex items-center gap-2 text-slate-300">❌ Rezervační systém</li>
+                        <li class="flex items-center gap-2 text-slate-300">❌ E-shop</li>
+                    </ul>
+                    <a href="{{ route('contact', ['interest' => 'Fotáček Lite']) }}" class="block text-center py-3 rounded-xl border-2 border-pink-500 text-pink-600 font-bold hover:bg-pink-50 transition-colors">Začít zdarma</a>
                 </div>
+                <!-- Pro -->
+                <div class="bg-slate-900 rounded-2xl border-2 border-pink-500 p-8 flex flex-col shadow-xl scale-105 z-10 relative">
+                    <div class="absolute top-0 right-8 -translate-y-1/2 bg-pink-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Populární</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Pro</h3>
+                    <p class="text-slate-400 text-sm mb-6">Vše, co potřebuje profík</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-white">990 Kč</span>
+                        <span class="text-slate-400 text-sm">/ měsíc</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm text-slate-300">
+                        <li class="flex items-center gap-2">✅ Neomezené galerie</li>
+                        <li class="flex items-center gap-2">✅ Rezervační systém</li>
+                        <li class="flex items-center gap-2">✅ SMS notifikace</li>
+                        <li class="flex items-center gap-2">✅ Základní E-shop</li>
+                        <li class="flex items-center gap-2">✅ Vlastní doména</li>
+                    </ul>
+                    <a href="{{ route('contact', ['interest' => 'Fotáček Pro']) }}" class="block text-center py-3 rounded-xl bg-pink-500 text-white font-bold hover:bg-pink-600 transition-colors shadow-lg shadow-pink-500/30">Vybrat Pro</a>
+                </div>
+                <!-- Agency -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-8 flex flex-col shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Agency</h3>
+                    <p class="text-slate-500 text-sm mb-6">Pro týmy a studia</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-slate-900">2 490 Kč</span>
+                        <span class="text-slate-500 text-sm">/ měsíc</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm text-slate-600">
+                        <li class="flex items-center gap-2">✅ Více uživatelů</li>
+                        <li class="flex items-center gap-2">✅ Pokročilý E-shop</li>
+                        <li class="flex items-center gap-2">✅ Multi-licence</li>
+                        <li class="flex items-center gap-2">✅ VIP podpora</li>
+                        <li class="flex items-center gap-2">✅ API přístup</li>
+                    </ul>
+                    <a href="{{ route('contact', ['interest' => 'Fotáček Agency']) }}" class="block text-center py-3 rounded-xl border-2 border-slate-800 text-slate-800 font-bold hover:bg-slate-50 transition-colors">Kontaktovat</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-slate-50 rounded-3xl p-12 border border-slate-100">
+            <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">Srovnání funkcí</h2>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left border-collapse">
+                    <thead>
+                        <tr class="border-b border-slate-200">
+                            <th class="py-4 px-2 text-slate-500 font-medium">Funkce</th>
+                            <th class="py-4 px-2 text-center text-slate-800 font-bold">Lite</th>
+                            <th class="py-4 px-2 text-center text-pink-600 font-bold">Pro</th>
+                            <th class="py-4 px-2 text-center text-slate-800 font-bold">Agency</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                        <tr>
+                            <td class="py-4 px-2 text-slate-700">Webová prezentace</td>
+                            <td class="py-4 px-2 text-center text-green-500">✓</td>
+                            <td class="py-4 px-2 text-center text-green-500">✓</td>
+                            <td class="py-4 px-2 text-center text-green-500">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-2 text-slate-700">Počet fotografií</td>
+                            <td class="py-4 px-2 text-center text-slate-600">100 ks</td>
+                            <td class="py-4 px-2 text-center text-slate-600">Neomezeně</td>
+                            <td class="py-4 px-2 text-center text-slate-600">Neomezeně</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-2 text-slate-700">Rezervační kalendář</td>
+                            <td class="py-4 px-2 text-center text-red-400">×</td>
+                            <td class="py-4 px-2 text-center text-green-500">✓</td>
+                            <td class="py-4 px-2 text-center text-green-500">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-2 text-slate-700">Prodej fotek (E-shop)</td>
+                            <td class="py-4 px-2 text-center text-red-400">×</td>
+                            <td class="py-4 px-2 text-center text-green-500">✓</td>
+                            <td class="py-4 px-2 text-center text-green-500">✓</td>
+                        </tr>
+                        <tr>
+                            <td class="py-4 px-2 text-slate-700">Vlastní doména</td>
+                            <td class="py-4 px-2 text-center text-slate-600">notm.cz/vaše</td>
+                            <td class="py-4 px-2 text-center text-green-500">✓</td>
+                            <td class="py-4 px-2 text-center text-green-500">✓</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
     </div>

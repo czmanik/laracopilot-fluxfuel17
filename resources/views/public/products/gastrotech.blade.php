@@ -33,7 +33,66 @@
             </div>
             @endforeach
         </div>
-        <div class="bg-slate-900 text-white rounded-3xl p-12">
+        <!-- Pricing -->
+        <div class="mb-20">
+            <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">Cenové plány</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Basic -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-8 flex flex-col shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Basic</h3>
+                    <p class="text-slate-500 text-sm mb-6">Pro malé kavárny a bistra</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-slate-900">1 490 Kč</span>
+                        <span class="text-slate-500 text-sm">/ měsíc</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm text-slate-600">
+                        <li class="flex items-center gap-2">✅ Digitální menu</li>
+                        <li class="flex items-center gap-2">✅ Rezervace stolů</li>
+                        <li class="flex items-center gap-2">✅ Základní sklad</li>
+                        <li class="flex items-center gap-2 text-slate-300">❌ Personální modul</li>
+                        <li class="flex items-center gap-2 text-slate-300">❌ HACCP</li>
+                    </ul>
+                    <a href="{{ route('contact', ['interest' => 'GastroTech Basic']) }}" class="block text-center py-3 rounded-xl border-2 border-orange-500 text-orange-600 font-bold hover:bg-orange-50 transition-colors">Zkusit Basic</a>
+                </div>
+                <!-- Standard -->
+                <div class="bg-slate-900 rounded-2xl border-2 border-orange-500 p-8 flex flex-col shadow-xl scale-105 z-10 relative">
+                    <div class="absolute top-0 right-8 -translate-y-1/2 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Nejoblíbenější</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Standard</h3>
+                    <p class="text-slate-400 text-sm mb-6">Pro zavedené restaurace</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-white">2 990 Kč</span>
+                        <span class="text-slate-400 text-sm">/ měsíc</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm text-slate-300">
+                        <li class="flex items-center gap-2">✅ Vše z Basic</li>
+                        <li class="flex items-center gap-2">✅ Personální modul</li>
+                        <li class="flex items-center gap-2">✅ Digitální HACCP</li>
+                        <li class="flex items-center gap-2">✅ Věrnostní systém</li>
+                        <li class="flex items-center gap-2">✅ Statistiky prodejů</li>
+                    </ul>
+                    <a href="{{ route('contact', ['interest' => 'GastroTech Standard']) }}" class="block text-center py-3 rounded-xl bg-orange-500 text-white font-bold hover:bg-orange-600 transition-colors shadow-lg shadow-orange-500/30">Vybrat Standard</a>
+                </div>
+                <!-- Premium -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-8 flex flex-col shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Premium</h3>
+                    <p class="text-slate-500 text-sm mb-6">Pro velké provozy a sítě</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-slate-900">5 990 Kč</span>
+                        <span class="text-slate-500 text-sm">/ měsíc</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm text-slate-600">
+                        <li class="flex items-center gap-2">✅ Vše ze Standard</li>
+                        <li class="flex items-center gap-2">✅ Multi-provozovny</li>
+                        <li class="flex items-center gap-2">✅ API napojení na účto</li>
+                        <li class="flex items-center gap-2">✅ 24/7 Hotline</li>
+                        <li class="flex items-center gap-2">✅ Custom úpravy</li>
+                    </ul>
+                    <a href="{{ route('contact', ['interest' => 'GastroTech Premium']) }}" class="block text-center py-3 rounded-xl border-2 border-slate-800 text-slate-800 font-bold hover:bg-slate-50 transition-colors">Kontaktovat</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-slate-900 text-white rounded-3xl p-12 mb-20">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 class="text-3xl font-bold mb-4">Výsledky mluví za vše</h2>
@@ -44,13 +103,9 @@
                         <div class="bg-slate-800 rounded-xl p-4 text-center"><p class="text-3xl font-black text-pink-400">4.9★</p><p class="text-slate-400 text-xs mt-1">Spokojenost klientů</p></div>
                     </div>
                 </div>
-                <div class="space-y-4">
-                    <div class="bg-slate-800 rounded-2xl p-6">
-                        <p class="text-slate-400 text-sm mb-1">Základní plán od</p>
-                        <p class="text-4xl font-black text-orange-400">2 490 Kč</p>
-                        <p class="text-slate-400 text-sm">bez DPH / měsíc</p>
-                    </div>
-                    <a href="{{ route('contact') }}" class="block text-center bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white py-4 rounded-xl font-semibold transition-all">Sjednat demo prezentaci</a>
+                <div class="text-center">
+                    <p class="text-xl text-slate-300 mb-8">Chcete vidět GastroTech v akci? Domluvte si nezávaznou prezentaci ve vaší provozovně.</p>
+                    <a href="{{ route('contact', ['interest' => 'GastroTech Demo']) }}" class="inline-block bg-gradient-to-r from-orange-500 to-amber-500 hover:from-orange-600 hover:to-amber-600 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all shadow-xl shadow-orange-500/20">Sjednat demo prezentaci</a>
                 </div>
             </div>
         </div>

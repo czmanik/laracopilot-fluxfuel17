@@ -67,6 +67,12 @@ class PublicController extends Controller
         return view('public.contact');
     }
 
+    public function references()
+    {
+        $projects = \App\Models\Project::where('status', 'completed')->orWhere('status', 'active')->orderBy('created_at', 'desc')->get();
+        return view('public.references', compact('projects'));
+    }
+
     public function contactStore(Request $request)
     {
         $validated = $request->validate([

@@ -38,7 +38,65 @@
                 <p class="text-slate-500">Push notifikace, změny programu v reálném čase, bezpečnostní upozornění. Vždy v kontaktu s publikem.</p>
             </div>
         </div>
-        <div class="bg-slate-900 text-white rounded-3xl p-12">
+        <!-- Pricing -->
+        <div class="mb-20">
+            <h2 class="text-3xl font-bold text-slate-900 text-center mb-12">Ceník pro organizátory</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Single Event -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-8 flex flex-col shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Single Event</h3>
+                    <p class="text-slate-500 text-sm mb-6">Jednorázová akce do 1 000 lidí</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-slate-900">4 900 Kč</span>
+                        <span class="text-slate-500 text-sm">/ akce</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm text-slate-600">
+                        <li class="flex items-center gap-2">✅ Mobilní program</li>
+                        <li class="flex items-center gap-2">✅ 1 scéna / areál</li>
+                        <li class="flex items-center gap-2">✅ Registrace účastníků</li>
+                        <li class="flex items-center gap-2 text-slate-300">❌ Real-time počítání</li>
+                        <li class="flex items-center gap-2 text-slate-300">❌ Push notifikace</li>
+                    </ul>
+                    <a href="{{ route('contact', ['interest' => 'MaponCulture Single']) }}" class="block text-center py-3 rounded-xl border-2 border-purple-500 text-purple-600 font-bold hover:bg-purple-50 transition-colors">Objednat akci</a>
+                </div>
+                <!-- Festival -->
+                <div class="bg-slate-900 rounded-2xl border-2 border-purple-500 p-8 flex flex-col shadow-xl scale-105 z-10 relative">
+                    <div class="absolute top-0 right-8 -translate-y-1/2 bg-purple-500 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Doporučujeme</div>
+                    <h3 class="text-xl font-bold text-white mb-2">Festival</h3>
+                    <p class="text-slate-400 text-sm mb-6">Pro větší akce a festivaly</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-white">12 900 Kč</span>
+                        <span class="text-slate-400 text-sm">/ akce</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm text-slate-300">
+                        <li class="flex items-center gap-2">✅ Neomezené scény</li>
+                        <li class="flex items-center gap-2">✅ Real-time počítání</li>
+                        <li class="flex items-center gap-2">✅ Push notifikace</li>
+                        <li class="flex items-center gap-2">✅ Interaktivní mapa</li>
+                        <li class="flex items-center gap-2">✅ Ticket integrace</li>
+                    </ul>
+                    <a href="{{ route('contact', ['interest' => 'MaponCulture Festival']) }}" class="block text-center py-3 rounded-xl bg-purple-500 text-white font-bold hover:bg-purple-600 transition-colors shadow-lg shadow-purple-500/30">Vybrat Festival</a>
+                </div>
+                <!-- Professional -->
+                <div class="bg-white rounded-2xl border border-slate-200 p-8 flex flex-col shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Professional</h3>
+                    <p class="text-slate-500 text-sm mb-6">Celoroční podpora agentur</p>
+                    <div class="mb-6">
+                        <span class="text-4xl font-black text-slate-900">Individuálně</span>
+                    </div>
+                    <ul class="space-y-4 mb-8 flex-grow text-sm text-slate-600">
+                        <li class="flex items-center gap-2">✅ Neomezeně akcí</li>
+                        <li class="flex items-center gap-2">✅ Whitelabel řešení</li>
+                        <li class="flex items-center gap-2">✅ Vlastní mobilní appka</li>
+                        <li class="flex items-center gap-2">✅ Dedikovaný manažer</li>
+                        <li class="flex items-center gap-2">✅ SLA podpora</li>
+                    </ul>
+                    <a href="{{ route('contact', ['interest' => 'MaponCulture Pro']) }}" class="block text-center py-3 rounded-xl border-2 border-slate-800 text-slate-800 font-bold hover:bg-slate-50 transition-colors">Poptat řešení</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-slate-900 text-white rounded-3xl p-12 mb-20">
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                     <h2 class="text-3xl font-bold mb-6">Ideální pro</h2>
@@ -48,13 +106,9 @@
                         @endforeach
                     </ul>
                 </div>
-                <div class="space-y-4">
-                    <div class="bg-slate-800 rounded-2xl p-6">
-                        <p class="text-slate-400 text-sm mb-1">Cena za akci od</p>
-                        <p class="text-4xl font-black text-purple-400">4 900 Kč</p>
-                        <p class="text-slate-400 text-sm">jednorázově za akci</p>
-                    </div>
-                    <a href="{{ route('contact') }}" class="block text-center bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white py-4 rounded-xl font-semibold transition-all">Konzultace zdarma</a>
+                <div class="text-center">
+                    <p class="text-xl text-slate-300 mb-8">Pořádáte akci a nevíte, který plán zvolit? Rádi vám poradíme.</p>
+                    <a href="{{ route('contact', ['interest' => 'MaponCulture Konzultace']) }}" class="inline-block bg-gradient-to-r from-purple-500 to-indigo-500 hover:from-purple-600 hover:to-indigo-600 text-white px-10 py-4 rounded-xl font-semibold text-lg transition-all shadow-xl shadow-purple-500/20">Konzultace zdarma</a>
                 </div>
             </div>
         </div>
